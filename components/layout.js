@@ -35,7 +35,7 @@ export default function Layout({ children, home }){
                         width={60}
                         alt='logo'
                     />
-                    </Link>
+                </Link>
                     <nav>
                         <ul className={styles.nav}>
                             <li className={styles.listItem}>
@@ -59,8 +59,8 @@ export default function Layout({ children, home }){
                 </div>
 
                 {home && (
-                    <>
-                        <Image
+                    <div className={styles.mt2}>
+                        <Image 
                             priority
                             src="/images/profile.jpg"
                             className={utilStyles.borderCircle}
@@ -69,11 +69,11 @@ export default function Layout({ children, home }){
                             alt={name}
                         />
                         <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                    </> 
+                    </div> 
 
                 )}
             </header>
-            <main>{children}</main>
+            <main className={styles.pad2}>{children}</main>
    
         </div>
     )

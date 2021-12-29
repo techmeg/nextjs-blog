@@ -1,7 +1,6 @@
 .container {
     background: rgb(239, 247, 224);
     max-width: 36rem;
-    padding: 1rem;
     margin: 0 auto 6rem;
     min-height: 90vh;
 }
@@ -12,11 +11,16 @@
     align-items: center;
 }
 .bar {
+    background-color: aqua;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     width: 100%;
+}
+
+.mt2 {
+    margin-top: 2rem;
 }
 .nav {
     display: flex;
@@ -33,5 +37,8 @@
 .link:hover {
     border-bottom: 2px solid rgb(23, 45, 82);
     font-weight: 700;
+}
+.pad2 {
+    padding: 2rem;
 }
 

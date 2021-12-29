@@ -13,7 +13,7 @@ export default function Quilt({ quiltData }) {
                 <title>{quiltData.title}</title>
             </Head>
             <article>
-                <h1 className={utilStyles.headingXl}>{quiltData.title}</h1>
+                <h1 className={utilStyles.headingXLQ}>{quiltData.title}</h1>
                 <Image 
                     priority
                     src={quiltData.img}
