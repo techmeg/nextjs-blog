@@ -26,7 +26,39 @@ export default function Layout({ children, home }){
                 <meta name='twitter:card' content = "summary_large_image" />
             </Head>
             <header className={styles.header}>
-                {home ? (
+                <div className={styles.bar}>
+                <Link href="/" >
+                    <Image 
+                        priority
+                        src='/images/techmeg.png'
+                        height={60}
+                        width={60}
+                        alt='logo'
+                    />
+                    </Link>
+                    <nav>
+                        <ul className={styles.nav}>
+                            <li className={styles.listItem}>
+                                <Link href="/posts">
+                                    <a className={styles.link}>Blog</a>
+                                </Link>
+                            </li >
+                            <li className={styles.listItem}>
+                                <Link href="/quilts">
+                                    <a className={styles.link}>Quilts</a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/recipes">
+                                    <a className={styles.link}>Recipes</a>
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                {home && (
                     <>
                         <Image
                             priority
@@ -38,36 +70,11 @@ export default function Layout({ children, home }){
                         />
                         <h1 className={utilStyles.heading2Xl}>{name}</h1>
                     </> 
-                ) : (
-                    <>
-                        <Link href="/">
-                            <a>
-                                <Image
-                                    priority
-                                    src="/images/profile.jpg"
-                                    className={utilStyles.borderCircle}
-                                    height={108}
-                                    width={108}
-                                    alt={name}
-                                /> 
-                            </a>
-                        </Link>
-                        <h2 className={utilStyles.headingLg}>
-                            <Link href="/">
-                                <a className={utilStyles.colorInherit}>{name}</a>
-                            </Link>
-                        </h2>
-                    </>
+
                 )}
             </header>
             <main>{children}</main>
-            {!home && (
-                <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
-                </div>
-            )}      
+   
         </div>
     )
 }
